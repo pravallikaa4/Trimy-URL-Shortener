@@ -1,103 +1,140 @@
+// import Image from "next/image";
+// import Link from "next/link";
+// export default function Home() {
+//   return (
+//  <main>
+//  <section className="grid grid-cols-2 h-[50vh]"> 
+//   <div className=" flex flex-col gap-4 items-center justify-center ">
+//     <p className="text-4xl font-bold">
+// The best URL shortener
+//     </p>
+//     <p className="text-center">
+//       With Trimly, you can easily create custom short links that are easy to remember and share.
+//     </p>
+//      <div className="justify-start flex gap-3">
+//   <Link href="/shorten"><button className='bg-purple-400 shadow-lg p-3 rounded-lg py-1 font-bold text-white'>Try Now</button></Link>
+//   </div>
+//   </div>
+//   <div className=" flex justify-start relative">
+// <Image alt="aan iamge" src={"/vector.jpg"} fill={true}/>
+//   </div>
+ 
+//  </section>
+//  </main>
+//   );
+// }
+"use client";
 import Image from "next/image";
+import Link from "next/link";
+import { use } from "react";
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="scroll-smooth">
+      {/* Hero Section */}
+      <section className="grid md:grid-cols-2 gap-6 min-h-screen items-center px-6 md:px-16">
+        <div className="flex flex-col gap-6">
+          <h1 className="text-5xl font-extrabold text-gray-900 leading-tight">
+            The best <span className="text-purple-600">URL shortener</span>
+          </h1>
+          <p className="text-lg text-gray-600 max-w-md">
+            With <span className="font-semibold text-purple-500">Trimly</span>,
+            you can create custom short links that are easy to remember, share,
+            and track with analytics.
+          </p>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          <div className="flex gap-4 mt-4">
+            <Link href="/shorten">
+              <button className="bg-purple-500 hover:bg-purple-600 transition px-6 py-3 rounded-lg shadow-lg font-semibold text-white">
+                🚀 Try Now
+              </button>
+            </Link>
+            <Link href="https://github.com/your-repo" target="_blank">
+              <button className="border border-purple-400 hover:bg-purple-100 transition px-6 py-3 rounded-lg font-semibold text-purple-600">
+                ⭐ GitHub
+              </button>
+            </Link>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+
+        <div className="relative flex justify-center">
           <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+            alt="Illustration"
+            src="/vector.jpg"
+            width={450}
+            height={450}
+            className="drop-shadow-lg"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        </div>
+      </section>
+
+      {/* Features Section */}
+     {/* Features Section */}
+<section id="features" className="py-20 bg-gray-50 px-6 md:px-16 text-center">
+  <h2 className="text-4xl font-bold text-gray-900 mb-12">✨ Features</h2>
+  <div className="grid md:grid-cols-3 gap-8">
+    <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+      <h3 className="text-xl font-semibold mb-2">🔗 Instant URL Shortening</h3>
+      <p className="text-gray-600">
+        Just paste your long URL and get a clean, short link instantly.
+      </p>
     </div>
+    <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+      <h3 className="text-xl font-semibold mb-2">✨ Custom Aliases</h3>
+      <p className="text-gray-600">
+        Optionally add a custom short name for your links — easy to remember!
+      </p>
+    </div>
+    <div className="bg-white p-6 rounded-xl shadow hover:shadow-lg transition">
+      <h3 className="text-xl font-semibold mb-2">📌 Copy & Share Instantly</h3>
+      <p className="text-gray-600">
+        Copy your short link with one click and share it anywhere — no logins required.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+     {/* Contact Section */}
+<section id="contact" className="py-20 bg-gray-50 px-6 md:px-16 text-center">
+  <h2 className="text-4xl font-bold text-gray-900 mb-6">📩 Contact Us</h2>
+  <p className="text-gray-600 mb-8">
+    Have questions or feedback? Reach out to us:
+  </p>
+  <p className="text-lg font-semibold text-gray-800 mb-4">m.prav1759@gmail.com</p>
+  <button
+    onClick={() => {
+      navigator.clipboard.writeText("m.prav1759@gmail.com");
+      alert("Email copied to clipboard ✅");
+    }}
+    className="bg-purple-500 hover:bg-purple-600 text-white px-6 py-3 rounded-lg shadow-md font-semibold transition"
+  >
+    📋 Copy Email
+  </button>
+
+  <div className="mt-6">
+    <a
+      href="https://github.com/pravallikaa4/Trimly"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="border border-purple-400 hover:bg-purple-100 text-purple-600 px-6 py-3 rounded-lg shadow-md font-semibold transition"
+    >
+      ⭐ GitHub
+    </a>
+  </div>
+</section>
+
+
+
+      {/* Footer */}
+      <footer className="bg-purple-600 text-white py-6 text-center mt-10">
+        <p>© {new Date().getFullYear()} Trimly. All rights reserved.</p>
+        <div className="flex justify-center gap-6 mt-3">
+          <Link href="#features" className="hover:underline">Features</Link>
+          <Link href="#about" className="hover:underline">About</Link>
+          <Link href="#contact" className="hover:underline">Contact</Link>
+        </div>
+      </footer>
+    </main>
   );
 }
