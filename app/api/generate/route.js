@@ -1,7 +1,10 @@
+// app/api/generate/route.js
 import { NextResponse } from "next/server";
-import clientPromise from "@/lib/mongodb";
 
 export async function POST(request) {
+  // lazy import
+  const clientPromise = (await import("@/lib/mongodb")).default;
+
   try {
     const body = await request.json();
 
@@ -13,19 +16,14 @@ export async function POST(request) {
     const db = client.db("trimly");
     const collection = db.collection("url");
 
-    // Generate random shorturl if not provided
     const shorturl = body.shorturl || Math.random().toString(36).substring(2, 8);
 
-    // Check if shorturl already exists
     const existing = await collection.findOne({ shorturl });
     if (existing) {
       return NextResponse.json({ success: false, message: "Short URL already exists" }, { status: 409 });
     }
 
-    await collection.insertOne({
-      url: body.url,
-      shorturl: shorturl,
-    });
+    await collection.insertOne({ url: body.url, shorturl });
 
     return NextResponse.json({
       success: true,
