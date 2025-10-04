@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+URL Shortener Web App
 
-## Getting Started
+A full-stack URL Shortener built with Next.js, Tailwind CSS, and MongoDB. This app allows users to convert long URLs into short, shareable links. Users can also create custom short URLs and easily copy them. The backend is powered by Next.js API Routes with MongoDB for storing URLs, and the APIs are tested with Postman.
 
-First, run the development server:
+Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Shorten long URLs into compact, shareable links.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Option to create custom short URLs.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Copy shortened URLs to clipboard with a click.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Clean, responsive, and user-friendly UI using Tailwind CSS.
 
-## Learn More
+Fast backend using Next.js API Routes and MongoDB.
 
-To learn more about Next.js, take a look at the following resources:
+Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Frontend: Next.js, React, Tailwind CSS
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Backend: Next.js API Routes, Node.js
 
-## Deploy on Vercel
+Database: MongoDB
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Testing: Postman
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Future Improvements
+
+Add user authentication (login/signup).
+
+Track analytics for each shortened URL (clicks, location, device).
+
+Add expiration dates for short URLs.
+
+Improved error handling and validation for invalid URLs.
+
+Deployment for public access on platforms like Vercel. 
