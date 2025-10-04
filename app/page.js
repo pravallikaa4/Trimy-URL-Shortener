@@ -72,7 +72,7 @@ export default function Home() {
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
           Trimly was built with simplicity in mind. We believe that sharing links
           should be fast, simple, and smart. Our mission is to make online sharing
-          more efficient, whether you're an individual, business, or startup.
+          more efficient, whether you are an individual, business, or startup.
         </p>
       </section>
 
