@@ -3,7 +3,7 @@ import clientPromise from "@/lib/mongodb";
 export default async function Page({params}) {
     const shorturl=(await params.shorturl).toString();
     const client= await clientPromise;
-    const db= client.db("trimly");
+    const db= client.db("Trimly");
     const collection= db.collection("url");
     const doc= await collection.findOne({shorturl: shorturl});
     if(doc){
