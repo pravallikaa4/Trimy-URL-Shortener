@@ -2,22 +2,19 @@
 import clientPromise from "@/lib/mongodb"
 
 export async function POST(request) {
-
-    const body = await request.json() 
-    const client = await clientPromise;
-    const db = client.db("trimly")
-    const collection = db.collection("url")
-
-    // Check if the short url exists
-    const doc = await collection.findOne({shorturl: body.shorturl})
+    const body= await request.json();
+    const client= await clientPromise;
+    const db= client.db("trimly");
+    const collection= db.collection("url");
+    // check if short url exists
+    const doc= await collection.findOne({shorturl: body.shorturl});
     if(doc){
-        return Response.json({success: false, error: true,  message: 'URL already exists!' })
+        return Response.json({success: false, error: true, message:'Short URL already exists'})
     }
-
-    const result = await collection.insertOne({
+    const result=await collection.insertOne({
         url: body.url,
         shorturl: body.shorturl
     })
 
-    return Response.json({success: true, error: false,  message: 'URL Generated Successfully' })
-  }
+    return Response.json({success: true, error: false, message:'URL shortened successfully'})
+    }
