@@ -16,5 +16,5 @@ export async function POST(request) {
         shorturl: body.shorturl
     })
 
-    return Response.json({success: true, error: false, message:'URL shortened successfully'})
+    return Response.json({success: true, shorturl: body.shorturl, error: false, message:'URL shortened successfully'})
     }
