@@ -27,7 +27,7 @@ const Shorten = () => {
       const result = await response.json();
 
       if (response.ok) {
-        setGenerated(`${process.env.NEXT_PUBLIC_HOST}/${shorturl}`);
+        setGenerated(`${process.env.NEXT_PUBLIC_HOST}/${result.shorturl}`);
         setUrl("");
         setShortUrl("");
       } else {
